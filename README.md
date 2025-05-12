@@ -35,8 +35,8 @@ pnpm install
    Create a `.env` files in the apps/ExcaliSketch and apps/backend directory using the provided `.env.example`.
 
    ```
-   NEXT_PUBLIC_BACKEND_URL=http://localhost:5000
-   NEXT_PUBLIC_WS_URL=http://localhost:5000
+   NEXT_PUBLIC_BACKEND_URL=http://localhost:5001
+   NEXT_PUBLIC_WS_URL=http://localhost:5001
 
    ```
    ```
