@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "builds": [
+    { "src": "apps/web/next.config.js", "use": "@vercel/next" },
+    { "src": "apps/Backend/index.js", "use": "@vercel/node" }
+  ],
+  "routes": [
+    { "src": "/api/(.*)", "dest": "apps/Backend" },
+    { "src": "/(.*)", "dest": "apps/web" }
+  ]
+}

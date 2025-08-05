@@ -35,7 +35,8 @@ const logStream = rfs.createStream("requestLogs.log", {
 //cors
 
 const allowedOrigins = [
-  "https://excali-sketch-main-excali-sketch.vercel.app/",
+  "https://excali-sketch-main-excali-sketch.vercel.app",
+  "https://excali-sketch-main-excali-sketch.vercel.app",
   "https://excali-sketch-main-exca-git-e48f03-rajesh-kumar-padhis-projects.vercel.app",
   "http://localhost:3000",
 ];
@@ -68,7 +69,7 @@ app.get("/", (req: Request, res: Response) => {
 app.use("/user", userRoutes);
 app.use("/room", roomRoutes);
 
-const PORT: number = parseInt(process.env.PORT ?? "5001", 10);
+const PORT: number = parseInt(process.env.PORT ?? "5000", 10);
 const server = createServer(app);
 
 // Initialize the WebSocket logic on the shared HTTP server
