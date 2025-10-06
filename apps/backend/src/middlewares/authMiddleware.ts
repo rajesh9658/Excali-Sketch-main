@@ -8,7 +8,7 @@ interface decodedString {
 }
 
 interface AuthRequest extends Request {
-  user?: any; // Replace `any` with the actual user type if known
+  user?: any; // to replace with the actual user type if available
 }
 const authMiddleware = (req: Request, res: Response, next: NextFunction) => {
   const token = req.header("Authorization")?.replace("Bearer ", "");

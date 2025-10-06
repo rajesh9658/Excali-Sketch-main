@@ -19,6 +19,8 @@ import {
 } from "lucide-react";
 import { ThemeToggle } from "@/components/theme-toggle";
 import HeroBackground from "@/components/hero-background";
+import {BACKEND_URL} from "./config";
+import axios from "axios";
 
 export default function Home() {
   const [isVisible, setIsVisible] = useState(false);
@@ -31,6 +33,25 @@ export default function Home() {
   const videoRef = useRef<HTMLElement>(null);
   const featuresRef = useRef<HTMLElement>(null);
   const ctaRef = useRef<HTMLElement>(null);
+  // backend url refresh for deploying in render
+  // to invoke the backend url
+  const checkBackend = async () => {
+  try {
+    const response = await axios.get(`${BACKEND_URL}/`);
+    const isWorking = response.data.msg === "hello there";
+    
+    if (isWorking) {
+      console.log("Backend URL is working fine");
+    } else {
+      console.warn("Backend responded with unexpected message");
+    }
+    
+    return isWorking;
+  } catch (error) {
+    console.error("Error fetching backend URL:", error);
+    return false;
+  }
+};
 
   // Handle scroll to determine active section and scroll position
   useEffect(() => {
